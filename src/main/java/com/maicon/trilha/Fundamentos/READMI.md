@@ -1,1 +1,0 @@
-Inferencia; consegue usar variavies do tipo var, mas não fazem misturar os tipos dessas variaveis 

@@ -2,66 +2,50 @@ package com.maicon.trilha.ArraysCollections;
 
 import java.util.Scanner;
 
-/**
- * Enunciado:
- * Você deve criar um programa em Java que:
- *
- * Pergunte ao usuário quantas notas ele quer informar.
- *
- * Leia todas essas notas e armazene em um array.
- *
- * Calcule e exiba:
- *
- * A média das notas
- *
- * A maior nota
- *
- * A menor nota
- *
- * 📋 Requisitos obrigatórios
- * Usar um array para armazenar os valores.
- *
- * Usar laço for ou for-each para processar os dados.
- *
- * Utilizar Scanner para ler os valores digitados.
- *
- * 🎯 Exemplo de execução:
- * yaml
- * Copiar código
- * Quantas notas deseja inserir? 5
- * Digite a nota 1: 8.5
- * Digite a nota 2: 9.0
- * Digite a nota 3: 6.0
- * Digite a nota 4: 7.5
- * Digite a nota 5: 10.0
- *
- * Média das notas: 8.2
- * Maior nota: 10.0
- * Menor nota: 6.0
- */
 public class ArrayExe00 {
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
-        System.out.println(" Qual é sua nota");
 
+        // Pergunta ao usuário quantas notas ele quer inserir
+        System.out.print("Quantas notas deseja inserir? ");
         int quantidade = entrada.nextInt();
 
-        int[] notas = new int[quantidade];
+        // Cria um array para armazenar as notas
+        double[] notas = new double[quantidade];
 
-        for (int i = 0; i < notas.length; i++ ){
-            System.out.println("Informe o numero" + (i +1));   // é uma soma ent vamos usar ( )
-            notas[i] = entrada.nextInt();
-        }
-         int soma = 0;
-        for (int i = 0; i < notas.length; i++ ){
-            soma += notas[i];
+        // Lê as notas e armazena no array
+        for (int i = 0; i < notas.length; i++) {
+            System.out.print("Digite a nota " + (i + 1) + ": ");
+            notas[i] = entrada.nextDouble();
         }
 
-        System.out.println(" Qual a soma das notas:" + soma);
-    }}
+        // Variáveis para cálculo
+        double soma = 0;
+        double maior = notas[0]; // assume que a primeira nota é a maior no início
+        double menor = notas[0]; // assume que a primeira nota é a menor no início
 
+        // Processa as notas para somar, e achar maior e menor
+        for (double nota : notas) {
+            soma += nota;
 
+            if (nota > maior) {
+                maior = nota;
+            }
 
+            if (nota < menor) {
+                menor = nota;
+            }
+        }
 
+        // Calcula a média
+        double media = soma / notas.length;
 
+        // Exibe os resultados formatados
+        System.out.printf("\nMédia das notas: %.2f\n", media);
+        System.out.printf("Maior nota: %.2f\n", maior);
+        System.out.printf("Menor nota: %.2f\n", menor);
+
+        entrada.close(); // Fecha o Scanner (boa prática)
+    }
+}
