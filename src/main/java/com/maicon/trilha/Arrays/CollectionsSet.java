@@ -1,4 +1,4 @@
-package com.maicon.trilha.ArraysCollections;
+package com.maicon.trilha.Arrays;
 /// O Set ( interface) ignora duplicatas
 /// Você não pode ter elementos duplicados (ex: emails únicos, nomes de usuários).
 

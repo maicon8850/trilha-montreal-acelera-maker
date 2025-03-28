@@ -1,4 +1,4 @@
-package com.maicon.trilha.ArraysCollections;
+package com.maicon.trilha.Arrays;
 
 import java.util.Scanner;
 
